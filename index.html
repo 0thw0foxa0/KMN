@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="src/js/app.js"></script>
+   
+    <title>RPS</title>
+</head>
+
+<body class="flex items-center justify-center h-screen ">
+
+    <div class="container mx-auto h-5/7 rounded-md bg-slate-50">
+
+        <div class=" mx-auto w-1/2 p-16 mb-4">
+            <h1 class="text-3xl font-semibold text-center text-slate-800" id="restart">Игра Камень-ножницы-бумага против компьютера
+            </h1>
+        </div>
+
+        <div class="mx-auto w-2/3 flex items-center justify-around  mb-4 ">
+
+            <div class="bg-[#FFDA00] rounded-lg w-64 h-80 content-end flex flex-col" id="playerblock">
+                <div id="showIconP" class="p-4">
+                    <img  width="256px" id="playerpic">
+                </div>
+                <div class="">
+                    <h2 id="playerChoose" class="text-2xl text-center font-semibold text-slate-50 bg-[#C8B332] p-2"></h2>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center flex-col">
+                <div class="flex items-center justify-around w-64 p-2 rounded-md mb-10">
+                    <div class="flex items-center gap-4">
+                        <div class="flex flex-col items-center justify-center">
+                            <img src="./src/image/user.png" alt="" width="70px">
+                            <h3 class="text-2xl text-center font-semibold text-slate-800"> <p id="usernick">User</p> </h3>
+                        </div>
+                        <h3 id="playerScore" class="text-2xl text-center font-semibold text-slate-800">0</h3>
+                    </div>
+                    <div class="">
+                        <h3 class="text-xl text-center font-semibold text-slate-800">:</h3>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <h3 id="computerScore" class="text-2xl text-center font-semibold text-slate-800">0</h3>
+                        <div class="">
+                            <img src="./src/image/robot.png" alt="" width="70px">
+                            <h3 class="text-2xl text-center font-semibold text-slate-800">Robot</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-200 rounded-md p-2 w-36">
+                    <h2 id="lol" class="text-2xl text-center font-semibold text-slate-800">RESULTS</h2>
+                </div>
+            </div>
+
+            <div class="bg-[#FFDA00] rounded-lg w-64 h-80 content-end flex flex-col" id="botblock">
+                <div id="showIconC" class="p-4">
+                    <img  width="256px" id="botpic">
+                </div>
+                <div class="">
+                    <!-- <h2 class="text-2xl text-center font-semibold text-slate-50 bg-[#C8B332] p-2">КАМЕНЬ</h2> -->
+                    <h2 id="botChoose" class="text-2xl text-center font-semibold text-slate-50 bg-[#C8B332] p-2"></h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mx-auto w-1/2 p-4" id="nahui">
+
+            <div class="mb-10">
+                <h1 class="text-3xl font-semibold text-center text-slate-800">Выберите элемент:</h1>
+            </div>
+
+            <div class="flex items-center justify-center gap-10">
+
+                <div id="btn" onclick="game('rock')"
+                    class="cursor-pointer rounded-lg w-36 h-52 content-end flex flex-col transition ease-in-out delay-50 bg-[#554DD8] hover:-translate-y-1 hover:scale-110 hover:bg-[#FFDA00] duration-300">
+                    <div class="">
+                        <img src="./src/image/rock_player.svg" width="144px" class="">
+                    </div>
+                    <div class="bg-[#7872D8] p-1" >
+                        <h2 class="text-2xl text-center font-semibold text-slate-50">КАМЕНЬ</h2>
+                    </div>
+                </div>
+
+                <div id="btn" onclick="game('scissors')"
+                    class="cursor-pointer rounded-lg w-36 h-52 content-end flex flex-col transition ease-in-out delay-50 bg-[#554DD8] hover:-translate-y-1 hover:scale-110 hover:bg-[#FFDA00] duration-300">
+                    <div class="" >
+                        <img src="./src/image/scissors_player.svg" width="144px" class="">
+                    </div>
+                    <div class="bg-[#7872D8] p-1" >
+                        <h2 class="text-2xl text-center font-semibold text-slate-50">НОЖНИЦЫ</h2>
+                    </div>
+                </div>
+
+                <div id="btn" onclick="game('paper')"
+                    class="cursor-pointer rounded-lg w-36 h-52 content-end flex flex-col transition ease-in-out delay-50 bg-[#554DD8] hover:-translate-y-1 hover:scale-110 hover:bg-[#FFDA00] duration-300">
+                    <div class="" >
+                        <img src="./src/image/paper_player.svg" width="144px" class="">
+                    </div>
+                    <div class="bg-[#7872D8] p-1">
+                        <h2 class="text-2xl text-center font-semibold text-slate-50">БУМАГА</h2>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
