@@ -40,7 +40,7 @@ function random(){
 }
 
 function check(itemP, itemB){
-   if(itemP===itemB){ console.log('draw');document.getElementById('lol').innerHTML = "draw";}
+   if(itemP==itemB){ console.log('draw');document.getElementById('lol').innerHTML = "draw";}
    else if(itemP=='paper' && itemB=='rock')
 
    {
@@ -147,7 +147,7 @@ function game(item)
         console.log('paper')
         document.getElementById('playerpic').src="./src/image/paper_player.svg";
         document.getElementById('playerChoose').innerHTML = "paper";
-        winround( check('rock',random()));
+        winround( check('paper',random()));
         gamewin(playerscore,botscore);  
     }
     break;
@@ -158,7 +158,7 @@ function game(item)
         console.log('scissors')
         document.getElementById('playerpic').src="./src/image/scissors_player.svg";
         document.getElementById('playerChoose').innerHTML = "scissors";
-        winround( check('rock',random())); 
+        winround( check('scissors',random())); 
         gamewin(playerscore,botscore);  
     }
     break;
